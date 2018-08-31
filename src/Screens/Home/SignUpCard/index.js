@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import {theme} from "../../../Store/Configuration/theme"
+
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -21,20 +23,21 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-end"
   },
-  image: {
-    flex: 0.7,
-    width: null,
-    height: null
-  },
   contentContainer: {
     borderRadius: 5,
     flex: 2,
     padding: 10
+  },
+  titleText:{
+    fontSize: theme.FONT_SIZE_LARGE
+  },
+  secondaryText:{
+    fontSize: theme.FONT_SIZE_SMALL
   }
 });
 
 const SignUpCard = () => {
-  let { cardContainer, imageContainer, contentContainer, image } = styles;
+  let { cardContainer, imageContainer, contentContainer, titleText, secondaryText } = styles;
   return (
     <View style={cardContainer}>
       <ImageBackground
@@ -43,8 +46,8 @@ const SignUpCard = () => {
       />
 
       <View style={contentContainer}>
-        <Text>Sieze the moment</Text>
-        <Text>Register and get access to all the conference benefits</Text>
+        <Text style={titleText}>Sieze the moment</Text>
+        <Text style={secondaryText}>Register and get access to all the conference benefits</Text>
       </View>
     </View>
   );
