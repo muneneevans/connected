@@ -29,10 +29,13 @@ const styles = StyleSheet.create({
     padding: 10
   },
   titleText:{
-    fontSize: theme.FONT_SIZE_LARGE
+    fontSize: theme.FONT_SIZE_MASSIVE,
+    fontFamily: theme.PRIMARY_FONT_FAMILY_SEMI_BOLD,
+    color: theme.PRIMARY_TEXT_COLOR    
   },
   secondaryText:{
-    fontSize: theme.FONT_SIZE_SMALL
+    fontSize: theme.FONT_SIZE_SMALL,
+    fontFamily: theme.PRIMARY_FONT_FAMILY_LIGHT,
   }
 });
 
