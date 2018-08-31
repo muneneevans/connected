@@ -50,7 +50,7 @@ const Banner = ({ images }) => {
     bannerTextContainer
   } = styles;
   return <View style={bannerContainer}>
-      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={true}>
+      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
         {images.map((city, i) => (
           <ImageBackground style={image} key={i} source={{ uri: city }}>
             <View style={bannerTextContainer}>

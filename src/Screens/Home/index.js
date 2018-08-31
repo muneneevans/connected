@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: "red"
   },
   signUpCardContainer: {
-    marginTop: 10,
+    marginTop: 5,
     padding: 10
   }
 });
