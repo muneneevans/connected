@@ -58,9 +58,10 @@ const OngoingTalks = ({ cardPressAction }) => {
       "https://images.pexels.com/photos/274886/pexels-photo-274886.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
     title: "Protection in the land of cyber security ",
     time: "Wed 4th ",
-    location:"Conference Hall 2",
+    location: "Conference Hall 2",
     speaker: {
       name: "Evans Munene",
+      company: "Microsoft",
       image:
         "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
     }

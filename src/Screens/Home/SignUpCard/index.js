@@ -11,12 +11,8 @@ import { theme, colorOptions } from "../../../Store/Configuration/theme";
 
 const styles = StyleSheet.create({
   cardContainer: {
-    // height: 100,
-
-    // flex: 1,
     flexDirection: "row",
     justifyContent: "flex-start",
-    // alignItems: "center",
     borderRadius: 5,
     padding: 5,
     borderColor: "black",
@@ -116,20 +112,23 @@ const SignUpCard = () => {
         </Text>
         <View style={registerButtonsContainer}>
           <TouchableOpacity style={[googleButton, socialButton]}>
-            <Text style={[secondaryText, socialButtonText, googleText]}>register</Text>
+            <Text style={[secondaryText, socialButtonText, googleText]}>
+              register
+            </Text>
             <Image
               source={require("./images/google.png")}
               style={socialImage}
             />
           </TouchableOpacity>
           <TouchableOpacity style={[facebookButton, socialButton]}>
-            <Text style={[secondaryText, socialButtonText, facebookText]}>register</Text>
+            <Text style={[secondaryText, socialButtonText, facebookText]}>
+              register
+            </Text>
             <Image
               source={require("./images/facebook.png")}
               style={socialImage}
             />
           </TouchableOpacity>
-          
         </View>
       </View>
     </View>

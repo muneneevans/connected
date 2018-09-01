@@ -4,7 +4,8 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  ImageBackground
+  ImageBackground,
+  Image
 } from "react-native";
 
 import { theme } from "../../Store/Configuration/theme";
@@ -21,7 +22,8 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: theme.FONT_SIZE_MASSIVE,
-    fontFamily: theme.PRIMARY_FONT_FAMILY_BOLD
+    fontFamily: theme.PRIMARY_FONT_FAMILY_BOLD,
+    paddingBottom:10
   },
   subTitleText: {
     fontSize: theme.FONT_SIZE_SMALL,
@@ -46,6 +48,38 @@ const bannerStyles = StyleSheet.create({
     height: 200,
     overflow: "hidden",
     elevation: 2
+  }
+});
+
+const speakerStyles = StyleSheet.create({
+  parentContainer: {
+    paddingTop: 10,
+    flexDirection: "row",
+    justifyContent: "flex-start"
+  },
+  speakerAvatarContainer: {
+    paddingRight: 10
+  },
+  speakerAvatar: {
+    borderRadius: 50,
+    height: 40,
+    width: 40,
+    borderWidth: 0.5,
+    borderColor: "black"
+  },
+  speakerDetailsContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start"
+  },
+  speakerNameText:{
+    fontSize: theme.FONT_SIZE_LARGE,
+    fontFamily: theme.PRIMARY_FONT_FAMILY_BOLD
+  },
+  speakerCompanyText:{
+    fontSize: theme.FONT_SIZE_SMALL,
+    fontFamily: theme.PRIMARY_FONT_FAMILY_SEMI_BOLD
   }
 });
 
@@ -100,6 +134,22 @@ class TalkPage extends Component {
               dignissimos maxime quisquam totam odit id porro praesentium.
               Aspernatur id atque pariatur quisquam eius et rerum.
             </Text>
+          </View>
+
+          <View style={styles.sectionContainer}>
+            <Text style={styles.sectionTitle}>Speaker</Text>
+            <View style={speakerStyles.parentContainer}>
+              <View style={speakerStyles.speakerAvatarContainer}>
+                <Image
+                  style={speakerStyles.speakerAvatar}
+                  source={{ uri: talk.speaker.image }}
+                />
+              </View>
+              <View style={speakerStyles.speakerDetailsContainer}>
+                <Text style={speakerStyles.speakerNameText}>{talk.speaker.name}</Text>
+                <Text style={speakerStyles.speakerCompanyText}>{talk.speaker.company}</Text>
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
