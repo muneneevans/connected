@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     borderRadius: 5,
-    flex: 2,
+    flex: 2
     // padding: 10
   },
   titleText: {
@@ -45,42 +45,44 @@ const styles = StyleSheet.create({
   },
   registerButtonsContainer: {
     flexDirection: "row",
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    paddingTop: 15
   },
-  socialButton:{
+  socialButton: {
     borderRadius: 50,
     borderWidth: 1,
     padding: 2,
     flexDirection: "row",
     justifyContent: "flex-end",
+    alignItems: "center",
     marginLeft: 5
-
   },
-  socialButtonText:{
+  socialButtonText: {
     paddingLeft: 7,
     paddingRight: 7,
-    fontFamily: theme.PRIMARY_FONT_FAMILY
+    fontFamily: theme.PRIMARY_FONT_FAMILY,
+    fontSize: theme.FONT_SIZE_SMALL
   },
   googleButton: {
     backgroundColor: colorOptions.orange.faint,
     color: colorOptions.orange.medium,
-    borderColor: colorOptions.orange.medium,
+    borderColor: colorOptions.orange.medium
   },
-  googleText:{
+  googleText: {
     color: colorOptions.orange.medium
   },
   facebookButton: {
     backgroundColor: colorOptions.blue.faint,
     color: colorOptions.blue.medium,
     borderColor: colorOptions.blue.medium,
-    borderWidth: 1,
+    borderWidth: 1
   },
-  facebookText:{
-    color: colorOptions.blue.medium,
+  facebookText: {
+    color: colorOptions.blue.medium
   },
   socialImage: {
-    height: theme.FONT_SIZE_LARGE,
-    width: theme.FONT_SIZE_LARGE
+    height: theme.FONT_SIZE_MEDIUM,
+    width: theme.FONT_SIZE_MEDIUM
   }
 });
 
@@ -114,14 +116,14 @@ const SignUpCard = () => {
         </Text>
         <View style={registerButtonsContainer}>
           <TouchableOpacity style={[googleButton, socialButton]}>
-            <Text style={[secondaryText, socialButtonText, googleText]}>login</Text>
+            <Text style={[secondaryText, socialButtonText, googleText]}>register</Text>
             <Image
               source={require("./images/google.png")}
               style={socialImage}
             />
           </TouchableOpacity>
           <TouchableOpacity style={[facebookButton, socialButton]}>
-            <Text style={[secondaryText, socialButtonText, facebookText]}>login</Text>
+            <Text style={[secondaryText, socialButtonText, facebookText]}>register</Text>
             <Image
               source={require("./images/facebook.png")}
               style={socialImage}

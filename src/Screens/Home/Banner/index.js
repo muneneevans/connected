@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, .3)"
+    backgroundColor: "rgba(255, 255, 255, .6)"
   },
   bannerPrimaryText: {
     fontSize: theme.FONT_SIZE_MASSIVE + 10,
