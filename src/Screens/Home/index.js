@@ -21,10 +21,15 @@ class Home extends Component {
     super(props);
 
     this.navigateToTalk = this.navigateToTalk.bind(this);
+    this.navigateToAllTalks = this.navigateToAllTalks.bind(this);
   }
 
   navigateToTalk(talk) {
     this.props.navigation.navigate("TalkPage", { talk });
+  }
+
+  navigateToAllTalks() {
+    this.props.navigation.navigate("Talks");
   }
 
   render() {
@@ -40,7 +45,10 @@ class Home extends Component {
         <View style={signUpCardContainer}>
           <SignUpCard />
         </View>
-        <OngoingTalks cardPressAction={this.navigateToTalk} />
+        <OngoingTalks
+          cardPressAction={this.navigateToTalk}
+          viewAllPressAction={this.navigateToAllTalks}
+        />
       </ScrollView>
     );
   }

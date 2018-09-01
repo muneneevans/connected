@@ -4,10 +4,18 @@ import { createStackNavigator } from "react-navigation";
 
 import Home from "../Home";
 import TalkPage from "../TalkPage";
+import Talks from "../Talks";
 
 const DefaultRoute = createStackNavigator({
   Home: {
     screen: Home,
+    header: null,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Talks: {
+    screen: Talks,
     header: null,
     navigationOptions: {
       header: null
