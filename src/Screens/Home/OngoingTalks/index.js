@@ -13,15 +13,13 @@ import TalkCard from "../TalkCard";
 const styles = StyleSheet.create({
   parentContainer: {
     backgroundColor: colorOptions.orange.faint,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 15,
+    paddingBottom: 25,
     paddingLeft: 5
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: 5,
-    paddingRight: 15
   },
   titleText: {
     fontFamily: theme.PRIMARY_FONT_FAMILY
@@ -39,11 +37,11 @@ const styles = StyleSheet.create({
     paddingRight: 10
   },
   talksContainer: {
-    paddingTop: 15
+    paddingTop: 5
   }
 });
 
-const OngoingTalks = ({ cardPressAction }) => {
+const OngoingTalks = ({ cardPressAction, viewAllPressAction }) => {
   let {
     parentContainer,
     titleText,
@@ -70,7 +68,7 @@ const OngoingTalks = ({ cardPressAction }) => {
     <View style={parentContainer}>
       <View style={header}>
         <Text style={titleText}>Currently ongoing </Text>
-        <TouchableOpacity style={viewAllButton}>
+        <TouchableOpacity style={viewAllButton} onPress={() => {viewAllPressAction()}}>
           <Text style={viewAllButtonText}>View All </Text>
         </TouchableOpacity>
       </View>
