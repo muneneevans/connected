@@ -35,13 +35,13 @@ const styles = StyleSheet.create({
     fontSize: theme.FONT_SIZE_LARGE,
     color: theme.SECONDARY_TEXT_COLOR
   },
-  authorContainer: {
+  speakerContainer: {
     flex: 2,
     justifyContent: "flex-end",
     alignItems: "flex-end"
   },
-  authorAvatar: { height: 40, width: 40, borderRadius: 40 },
-  authorText: {
+  speakerAvatar: { height: 40, width: 40, borderRadius: 40 },
+  speakerText: {
     fontFamily: theme.PRIMARY_FONT_FAMILY_LIGHT,
     fontSize: theme.FONT_SIZE_SMALL - 4,
     color: theme.SECONDARY_TEXT_COLOR,
@@ -49,43 +49,41 @@ const styles = StyleSheet.create({
   }
 });
 
-const talkCard = () => {
+const talkCard = ({ cardPressAction, talk }) => {
   let {
     parentContainer,
     contentContainer,
     titleContainer,
-    authorContainer,
-    authorAvatar,
-    authorText,
+    speakerContainer,
+    speakerAvatar,
+    speakerText,
     title
   } = styles;
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        cardPressAction(talk);
+      }}
+    >
       <ImageBackground
         style={parentContainer}
         source={{
-          uri:
-            "https://images.pexels.com/photos/274886/pexels-photo-274886.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+          uri: talk.image
         }}
       >
         <View style={contentContainer}>
           <View style={titleContainer}>
-            <Text style={title}>Protection in the land of cyber security </Text>
+            <Text style={title}>{talk.title}</Text>
           </View>
-          <View style={authorContainer}>
+          <View style={speakerContainer}>
             <Image
-              style={authorAvatar}
-              // source={{
-              //   uri:
-              //     "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              // }}
+              style={speakerAvatar}
               source={{
-                uri:
-                  "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                uri: talk.speaker.image
               }}
             />
-            <Text style={authorText}>Wed 4th </Text>
-            <Text style={authorText}>Evans Munene</Text>
+            <Text style={speakerText}>{talk.speaker.name}</Text>
+            <Text style={speakerText}>{talk.time} </Text>
           </View>
         </View>
       </ImageBackground>

@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView
+} from "react-native";
 import { theme, colorOptions } from "../../../Store/Configuration/theme";
 
 import TalkCard from "../TalkCard";
@@ -37,7 +43,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const OngoingTalks = () => {
+const OngoingTalks = ({ cardPressAction }) => {
   let {
     parentContainer,
     titleText,
@@ -46,6 +52,19 @@ const OngoingTalks = () => {
     header,
     talksContainer
   } = styles;
+
+  let defaultTalk = {
+    image:
+      "https://images.pexels.com/photos/274886/pexels-photo-274886.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    title: "Protection in the land of cyber security ",
+    time: "Wed 4th ",
+    location:"Conference Hall 2",
+    speaker: {
+      name: "Evans Munene",
+      image:
+        "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    }
+  };
   return (
     <View style={parentContainer}>
       <View style={header}>
@@ -59,12 +78,13 @@ const OngoingTalks = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
         style={talksContainer}
-        contentOffset={{x: 40, y: 0}}
-    >
-        <TalkCard />
-        <TalkCard />
-        <TalkCard />
-        <TalkCard />
+        contentOffset={{ x: 40, y: 0 }}
+      >
+        <TalkCard cardPressAction={cardPressAction} talk={defaultTalk} />
+        <TalkCard cardPressAction={cardPressAction} talk={defaultTalk} />
+        <TalkCard cardPressAction={cardPressAction} talk={defaultTalk} />
+        <TalkCard cardPressAction={cardPressAction} talk={defaultTalk} />
+        <TalkCard cardPressAction={cardPressAction} talk={defaultTalk} />
       </ScrollView>
     </View>
   );
